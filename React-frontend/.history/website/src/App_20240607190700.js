@@ -2,14 +2,12 @@ import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import MainPage from "./components/Main/MainPage";
-import Web3ConnectionExample from "./utils/web";
 
 function App() {
-  document.title = "DropShip";
   return (
     <div className="App">
       <Navbar />
-      <MainPage username="Ajitesh" />
+      <MainPage />
       <Web3ConnectionExample />
 
       {/* <header className="App-header">

@@ -104,7 +104,7 @@ export const connectWalletToLocalGanache = async () => {
 
 const Web3Connection = () => {
   const [contract, setContract] = useState(null);
-  let [accounts, setAccounts] = useState([]);
+  const [accounts, setAccounts] = useState([]);
   const [skins, setSkins] = useState([]);
 
 
@@ -125,8 +125,7 @@ const Web3Connection = () => {
   };
 
   const connectWallet = async () => {
-    try {
-        accounts = await connectWalletToLocalGanache();
+    try {accounts = await connectWalletToLocalGanache();
       setAccounts(accounts);
       console.log("Connected to Ganache with accounts:", accounts);
     } catch (error) {

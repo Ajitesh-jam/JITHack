@@ -1,0 +1,60 @@
+import React from "react";
+import Web3 from "web3";
+import skinMarketABI from "../components/abis/skinMarketABI.json";
+
+// Function to connect to the skinMarket contract using local Ganache
+export const connectToLocalGanache = () => {
+  const skinMarketAdd = "0x0DedDe527e2B24a6c2B3bF5F3E7488517E37F3AD"; // Ganache address
+  const web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:7545")); // Ganache provider
+
+  return new web3.eth.Contract(skinMarketABI, skinMarketAdd);
+};
+
+// Function to connect to the skinMarket contract using MetaMask if available
+export const connectToMetaMask = () => {
+  if (window.ethereum) {
+    const web3 = new Web3(window.ethereum);
+    const skinMarketAdd = "0x0DedDe527e2B24a6c2B3bF5F3E7488517E37F3AD"; // Update to your deployed contract address on Ethereum
+
+    return new web3.eth.Contract(skinMarketABI, skinMarketAdd);
+  } else {
+    throw new Error("MetaMask is not installed. Please install MetaMask and try again.");
+  }
+};
+
+// Example usage in a React component
+const Web3ConnectionExample = () => {
+  const [contract, setContract] = React.useState(null);
+  const [accounts, setAccounts] = React.useState([]);
+
+  const connectToContract = async () => {
+    try {
+      // Try to connect to MetaMask first
+      if (window.ethereum) {
+        const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
+        setAccounts(accounts);
+        const contract = connectToMetaMask();
+        setContract(contract);
+        console.log("Connected to MetaMask:", accounts);
+      } else {
+        // Fallback to local Ganache if MetaMask is not available
+        const contract = connectToLocalGanache();
+        setContract(contract);
+        console.log("Connected to local Ganache");
+      }
+    } catch (error) {
+      console.error("Connection error:", error);
+    }
+  };
+
+  return (
+    <div>
+      <h1>Web3 Connection Example</h1>
+      <button onClick={connectToContract}>Connect to Contract</button>
+      {accounts.length > 0 && <p>Connected Account: {accounts[0]}</p>}
+      {contract && <p>Contract Address: {contract.options.address}</p>}
+    </div>
+  );
+};
+
+export default Web3ConnectionExample;

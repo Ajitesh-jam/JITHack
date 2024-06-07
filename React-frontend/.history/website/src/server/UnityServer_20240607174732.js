@@ -23,6 +23,11 @@ app.get("/:username", async (req, res) => {
   const { username } = req.params;
 
   try {
+    // Find all the skins owned by the specified username
+    const ownedSkins = await OwnedSkin.find({ username: username });
+    // Return the owned skins as JSON response
+
+    res.json(ownedSkins[0].skinId);
   } catch (error) {
     // If an error occurs, return an error response
     res.status(500).json({ message: error.message });
