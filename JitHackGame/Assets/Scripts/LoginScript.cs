@@ -6,8 +6,10 @@ using UnityEngine.UI;
 
 public class LoginScript : MonoBehaviour
 {
+
+    public Example blockchainManager; 
     [SerializeField] private TMP_InputField username_text;
-    public int[] skin_ids;
+    public List<int> skin_ids;
     [SerializeField] private CardDisplay[] cards;
     [SerializeField] private GameObject cardParent;
     [SerializeField] private GameObject LoginCanvas;
@@ -26,11 +28,23 @@ public class LoginScript : MonoBehaviour
     public void GetSkin()
     {
         string username = username_text.text;
-        DisplayCards();
+        blockchainManager.getSkinsOfUser(username);
+        StartCoroutine(waitForSkins());
 
     }
-    public int[] GetIDs()
+    IEnumerator waitForSkins()
     {
+        yield return new WaitForSeconds(2f);
+        skin_ids= blockchainManager.GetSkinIds();
+        Debug.Log("SkinIds from wait for skins : "+ skin_ids[1]);
+       
+        //DisplayCards();
+
+
+    }
+    public List<int> GetIDs()
+    {
+
         return skin_ids;
     }
     private void DisplayCards()
