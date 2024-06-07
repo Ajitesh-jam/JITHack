@@ -145,23 +145,23 @@ const Web3Connection = () => {
     connectWallet();
   }, []);
 
-  return (
-    <div>
-      <h1>Web3 Connection Example</h1>
-      {accounts.length > 0 && <p>Connected Account: {accounts[0]}</p>}
-      {contract && <p>Contract Address: {contract.options.address}</p>}
-      {skins.length > 0 && (
-        <div>
-          <h2>Skins</h2>
-          <ul>
-            {skins.map((skin, index) => (
-              <li key={index}>Skin ID: {skin}</li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
-  );
+  // return (
+  //   <div>
+  //     <h1>Web3 Connection Example</h1>
+  //     {accounts.length > 0 && <p>Connected Account: {accounts[0]}</p>}
+  //     {contract && <p>Contract Address: {contract.options.address}</p>}
+  //     {skins.length > 0 && (
+  //       <div>
+  //         <h2>Skins</h2>
+  //         <ul>
+  //           {skins.map((skin, index) => (
+  //             <li key={index}>Skin ID: {skin}</li>
+  //           ))}
+  //         </ul>
+  //       </div>
+  //     )}
+  //   </div>
+  // );
 };
 
 export default Web3Connection;
