@@ -1,6 +1,7 @@
 import NavbarSell from "../components/NavbarSell/Navbarsell";
 import Header from "../components/Header/Header"
 import LoginCard from "../components/LoginCard/LoginCard";
+import Footer from "../components/Footer/Footer";
 
 function LoginPage() {
     document.title = "DropShip";
@@ -10,6 +11,7 @@ function LoginPage() {
         <NavbarSell/>
         <Header/>
         <LoginCard/>
+        <Footer/>
         
         
 
