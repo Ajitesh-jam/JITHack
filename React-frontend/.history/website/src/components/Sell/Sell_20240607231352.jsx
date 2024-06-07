@@ -1,11 +1,13 @@
-async function sell(username,price) {
-   //check if the skin is unique by comparing metadata
-   //if skins unique
+async function sell() {
+   
 
     // Call the buy function in the smart contract
     const contract = await GanacheContract();
     const accounts = await connectWalletToLocalGanache();
-   
+    const skin = await contract.methods.OwnerOfSkin(index).call();
+    const price = skin.price;
+    console.log("Price:", price);
+    console.log("price: ", price);
     const gas = await contract.methods
       .buySkin(index, username)
       .estimateGas({ from: accounts[0], value: price });

@@ -88,25 +88,19 @@ import Web3 from "web3";
 import skinMarketABI from "../components/abis/skinMarketABI.json";
 
 // Function to connect to the skinMarket contract using local Ganache
-export async function GanacheContract() {
+export const GanacheContract = async () => {
   const skinMarketAdd = "0x6c77398C0DA93C6a374319880eCE5fEc6aFba7Eb"; // Ganache address
   const web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:7545")); // Ganache provider
+
   return new web3.eth.Contract(skinMarketABI, skinMarketAdd);
 };
 
 // Function to connect to the local Ganache and get accounts
-export async function connectWalletToLocalGanache () {
+export const connectWalletToLocalGanache = async () => {
   const web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:7545")); // Ganache provider
   const accounts = await web3.eth.getAccounts();
   return  accounts ;
 };
-
-export async function gasPrice(){
-    const web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:7545")); // Ganache provider
-   const gasprice= await web3.eth.getGasPrice(); 
-   return gasprice;
-
-}
 
 const Web3Connection = () => {
   const [contract, setContract] = useState(null);

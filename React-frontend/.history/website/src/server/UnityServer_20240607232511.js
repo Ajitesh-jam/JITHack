@@ -24,8 +24,7 @@ app.get("/:username", async (req, res) => {
   const { username } = req.params;
 
   const contract = await GanacheContract();
-  const skinIds = await contract.methods.getSkins(username).call();
-  console.log(skinIds);
+  const skinIds = await contract.console.log();
 
   try {
   } catch (error) {
