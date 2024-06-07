@@ -1,30 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
-import MainPage from './components/Main/MainPage';
+import BuyPage from './pages/BuyPage';
+import SellPage from './pages/SellPage'
+import { BrowserRouter as BrowserRouter, Routes, Route } from 'react-router-dom';
+
 function App() {
   document.title = "DropShip";
   return (
-    
-    <div className="App">
-      <Navbar/>
-      <MainPage/>
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-       */}
+
+
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<BuyPage />} />
+          <Route path="/about" element={<SellPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
+
   );
 }
 
