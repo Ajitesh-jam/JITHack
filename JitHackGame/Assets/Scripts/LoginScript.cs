@@ -38,7 +38,7 @@ public class LoginScript : MonoBehaviour
         skin_ids= blockchainManager.GetSkinIds();
         Debug.Log("SkinIds from wait for skins : "+ skin_ids[1]);
        
-        //DisplayCards();
+        DisplayCards();
 
 
     }
