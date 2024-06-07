@@ -39,13 +39,9 @@ const CarouselSection = ({ title, username }) => {
       .buySkin(index, username)
       .estimateGas({ from: accounts[0], value: price });
 
-    const transaction = await contract.methods
+    const transaction = contract.methods
       .buySkin(index, username)
       .send({ from: accounts[0], value: price, gas: gas });
-    console.log(
-      "Successfully buyed skin ,Transaction Hash: ",
-      transaction.transactionHash
-    );
   }
   return (
     <div className="carousel-section">

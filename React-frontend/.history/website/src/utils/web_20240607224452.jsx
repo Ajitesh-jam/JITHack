@@ -95,18 +95,11 @@ export async function GanacheContract() {
 };
 
 // Function to connect to the local Ganache and get accounts
-export async function connectWalletToLocalGanache () {
+export const connectWalletToLocalGanache = async () => {
   const web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:7545")); // Ganache provider
   const accounts = await web3.eth.getAccounts();
   return  accounts ;
 };
-
-export async function gasPrice(){
-    const web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:7545")); // Ganache provider
-   const gasprice= await web3.eth.getGasPrice(); 
-   return gasprice;
-
-}
 
 const Web3Connection = () => {
   const [contract, setContract] = useState(null);

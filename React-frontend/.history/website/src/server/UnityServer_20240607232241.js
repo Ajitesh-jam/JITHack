@@ -2,7 +2,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const OwnedSkin = require("./model.js");
 const cors = require("cors");
-const { GanacheContract } = require("../utils/web.jsx");
 const app = express();
 app.use(cors());
 app.use(express.json()); // Middleware to parse JSON bodies
@@ -22,10 +21,6 @@ mongoose
 app.get("/:username", async (req, res) => {
   //function to get user skins
   const { username } = req.params;
-
-  const contract = await GanacheContract();
-  const skinIds = await contract.methods.getSkins(username).call();
-  console.log(skinIds);
 
   try {
   } catch (error) {

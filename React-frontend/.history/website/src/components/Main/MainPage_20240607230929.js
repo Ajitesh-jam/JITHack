@@ -37,15 +37,12 @@ const CarouselSection = ({ title, username }) => {
     console.log("price: ", price);
     const gas = await contract.methods
       .buySkin(index, username)
-      .estimateGas({ from: accounts[0], value: price });
+      .estimateGas({ from: accounts[0] });
 
-    const transaction = await contract.methods
-      .buySkin(index, username)
-      .send({ from: accounts[0], value: price, gas: gas });
-    console.log(
-      "Successfully buyed skin ,Transaction Hash: ",
-      transaction.transactionHash
-    );
+    // const transaction = contract.methods
+    //   .buySkin(index, username)
+    //   .send({ from: accounts[0]
+    //     , gas: gas });
   }
   return (
     <div className="carousel-section">

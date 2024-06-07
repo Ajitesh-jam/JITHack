@@ -2,11 +2,8 @@ import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./MainPage.css";
-import {
-  GanacheContract,
-  connectWalletToLocalGanache,
-  gasPrice,
-} from "../../utils/web";
+import { GanacheContract, connectWalletToLocalGanache } from "../../utils/web";
+import { Contract } from "web3";
 
 const items = []; // Initialize an empty array to store the items
 
@@ -31,21 +28,8 @@ const CarouselSection = ({ title, username }) => {
     // Call the buy function in the smart contract
     const contract = await GanacheContract();
     const accounts = await connectWalletToLocalGanache();
-    const skin = await contract.methods.OwnerOfSkin(index).call();
-    const price = skin.price;
-    console.log("Price:", price);
-    console.log("price: ", price);
-    const gas = await contract.methods
-      .buySkin(index, username)
-      .estimateGas({ from: accounts[0], value: price });
 
-    const transaction = await contract.methods
-      .buySkin(index, username)
-      .send({ from: accounts[0], value: price, gas: gas });
-    console.log(
-      "Successfully buyed skin ,Transaction Hash: ",
-      transaction.transactionHash
-    );
+    console.log(contract, accounts[0]);
   }
   return (
     <div className="carousel-section">
