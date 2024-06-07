@@ -1,0 +1,2 @@
+[16:52:25.679350 +05:30] [---D---] [argeo/ardk-next/core/components/component_factory_collection.cc:ComponentFactoryCollection:37] [thread 280234] api_key:8kDBuWn5IrnTvOxWWHkVOoDv1GNwKGeE3FNiMhJqAwAF0oUlqN5LtW2FEhhmcajaJqmP8g
+[16:52:25.680151 +05:30] [---W---] [argeo/ardk-next/common/ardk_settings/ardk_settings_manager.cc:SetFromFile:52] [thread 280234] Failed to read the feature flag file/Users/vedantahazra/JitHackGame/Assets/StreamingAssets/featureFlag.json
