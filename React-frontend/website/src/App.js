@@ -3,30 +3,31 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import MainPage from "./components/Main/MainPage";
 import Web3ConnectionExample from "./utils/web";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import SellPage from "./pages/SellPage";
+import BuyPage from "./pages/BuyPage";
+import LoginPage from "./pages/LoginPage";
 function App() {
   document.title = "DropShip";
   return (
     <div className="App">
-      <Navbar />
-      <MainPage username="JIT" />
-      <Web3ConnectionExample />
+      {/* <Navbar />
+      <MainPage username="JIT" /> */}
 
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-       */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/Login" element={<LoginPage/>}/>
+          <Route path="/:username/Buy" element={<BuyPage />} />
+          <Route path="/:username/Sell" element={<SellPage />} />
+
+
+
+
+        </Routes>
+
+
+      </BrowserRouter>
+      <Web3ConnectionExample />
     </div>
   );
 }

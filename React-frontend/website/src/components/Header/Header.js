@@ -8,9 +8,9 @@ const Header = () => {
 return (
     <header className="header" style={{ backgroundImage: `url(${backgroundImage})` }}>
     <div className="overlay">
-    <h1>Say Yes to Creativity</h1><br></br>
+    <h1>Say Yes to Creativity</h1>
 
-<p>Welcome to our marketplace, where creativity meets convenience. Explore an array of meticulously crafted skins and rifles designed by independent artists, offering a solution to the time constraints of creativity.<br></br> With the added security of blockchain technology, indulge in an unhindered exchange of unique commodities unlike any other.</p>
+<p>Welcome to our marketplace, where creativity meets convenience. Explore an array of meticulously crafted skins and rifles designed by independent artists, offering a solution to the time constraints of creativity.<br></br> <b>With the added security of blockchain technology, indulge in an unhindered exchange of unique commodities unlike any other.</b></p>
 
     </div>
     </header>

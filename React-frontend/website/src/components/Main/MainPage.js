@@ -56,7 +56,9 @@ const CarouselSection = ({ title, username }) => {
         infiniteLoop={true}
         useKeyboardArrows={true}
         centerMode={true}
-        centerSlidePercentage={33.33} // Show three items at a time
+        centerSlidePercentage={33.33}
+        autoPlay={true} // Set autoPlay to true for auto-rotation
+        interval={3000} // Set the interval between slides (in milliseconds)
         className="custom-carousel"
       >
         {items.map((item, index) => (
@@ -69,7 +71,7 @@ const CarouselSection = ({ title, username }) => {
                 }}
               >
                 BUY
-              </button>
+              </button >
               <p>{item.property1}</p>
               <p>{item.property2}</p>
               <p>{item.property3}</p>
@@ -87,8 +89,8 @@ const MainPage = (props) => (
   <div className="main-page">
     <CarouselSection username={props.username} title="Skins" />
     <CarouselSection username={props.username} title="Animations" />
-    <CarouselSection username={props.username} title="Subheading 3" />
-    <CarouselSection username={props.username} title="Subheading 4" />
+    <CarouselSection username={props.username} title="Artist" />
+    <CarouselSection username={props.username} title="Colors" />
   </div>
 );
 

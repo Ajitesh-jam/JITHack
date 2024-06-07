@@ -1,7 +1,7 @@
 body {
     background-color: #15192f; /* Dark blue-black */
     color: #ffffff; /* White */
-    font-family: 'Arial', sans-serif;
+    font-family: 'Bangers', sans-serif;
   }
   
   .main-page {
@@ -14,7 +14,7 @@ body {
   padding: 10px;
   border-radius: 5px;
   text-align: left;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bangers', sans-serif;
   font-weight: 700;
   margin-bottom: 20px;
   }
@@ -86,3 +86,43 @@ body {
     display: flex;
     justify-content: center;
   }
+  .button:hover {
+    background-color: #ff4444;
+  }
+  .button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f00;
+    color: #ee0a0a;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  /* Add this CSS to your stylesheet */
+.custom-carousel .item-details button {
+    background-color: orange; /* Set button background color to orange */
+    color: white; /* Set button text color to white */
+    font-family: "Bangers", sans-serif;
+    border: none; /* Remove button border */
+    padding: 10px 20px; /* Add padding to the button */
+    border-radius: 5px; /* Add border radius to the button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition effect */
+  }
+  
+  .custom-carousel .item-details button:hover {
+    background-color: darkorange; /* Change button background color to darker orange on hover */
+  }
+  
+  .custom-carousel .item-details {
+    font-family: "Bangers", sans-serif; /* Set font family to Montserrat */
+    font-size: 16px; /* Set font size */
+    color: #f30b0b; /* Set font color */
+  }
+  
+  .custom-carousel .item-details p {
+    margin: 5px 0; /* Add margin between paragraphs */
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
