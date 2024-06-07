@@ -41,8 +41,8 @@ const CarouselSection = ({ title }) => (
 
 const MainPage = () => (
   <div className="main-page">
-    <CarouselSection title="Subheading 1" />
-    <CarouselSection title="Subheading 2" />
+    <CarouselSection title="Skins" />
+    <CarouselSection title="Animations" />
     <CarouselSection title="Subheading 3" />
     <CarouselSection title="Subheading 4" />
   </div>

@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import MainPage from './components/Main/MainPage';
 function App() {
+  document.title = "DropShip";
   return (
     
     <div className="App">
