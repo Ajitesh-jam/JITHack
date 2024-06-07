@@ -7,8 +7,7 @@ using UnityEngine.EventSystems;
 
 public class PlaceCharacter : NetworkBehaviour
 {
-    [SerializeField] private GameObject hawkeye;
-    [SerializeField] private GameObject thor;
+    [SerializeField] private GameObject[] characterPrefabs;
     [SerializeField] private float placeHeight;
     
 
@@ -91,13 +90,9 @@ public class PlaceCharacter : NetworkBehaviour
     {
         positon.y += placeHeight;
         GameObject placementObject;
-        if(callerID == 0)
-        {
-            placementObject = hawkeye;
-        }
-        else{
-            placementObject = thor;
-        }
+        
+        placementObject = characterPrefabs[callerID];
+       
         
         GameObject character = Instantiate(placementObject, positon, rotation);
 
