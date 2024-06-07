@@ -30,7 +30,7 @@ body {
     background-color: #283447; /* Dark blue */
     border-radius: 10px;
     padding: 10px;
-    margin: 0 20px; /* Adjust spacing between carousel items */
+    margin: 0 10px; /* Adjust spacing between carousel items */
   }
   
   .carousel-item img {

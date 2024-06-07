@@ -3,7 +3,6 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./MainPage.css";
 import Web3Connection from "../../utils/web";
-import { Contract } from "web3";
 
 const items = []; // Initialize an empty array to store the items
 
@@ -24,9 +23,7 @@ for (let i = 0; i < 10; i++) {
 const CarouselSection = ({ title, username }) => {
   async function buy(index) {
     console.log(`Buying item ${index} with username: ${username}`);
-
     // Call the buy function in the smart contract
-    const contract=Web3Connection.
   }
   return (
     <div className="carousel-section">

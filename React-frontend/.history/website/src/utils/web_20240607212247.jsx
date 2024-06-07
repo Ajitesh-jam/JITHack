@@ -99,14 +99,14 @@ export const connectToLocalGanache = async () => {
 export const connectWalletToLocalGanache = async () => {
   const web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:7545")); // Ganache provider
   const accounts = await web3.eth.getAccounts();
-  return  accounts ;
+  return { web3, accounts };
 };
 
 const Web3Connection = () => {
   const [contract, setContract] = useState(null);
-  let [accounts, setAccounts] = useState([]);
+  const [accounts, setAccounts] = useState([]);
   const [skins, setSkins] = useState([]);
-
+  const [web3Instance, setWeb3Instance] = useState(null);
 
   const connectToContract = async () => {
     try {
@@ -126,7 +126,8 @@ const Web3Connection = () => {
 
   const connectWallet = async () => {
     try {
-        accounts = await connectWalletToLocalGanache();
+      const { web3, accounts } = await connectWalletToLocalGanache();
+      setWeb3Instance(web3);
       setAccounts(accounts);
       console.log("Connected to Ganache with accounts:", accounts);
     } catch (error) {
