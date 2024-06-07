@@ -25,6 +25,15 @@ function Navbar() {
             <a href="https://mail.google.com/mail/u/0/#inbox/FMfcgzQVwwwNdptcgPlbKwkrvBWqbKDr">Dropdown Item 3</a>
           </div>
         </div>
+        <div className="navbar-image-container">
+        <img src="https://source.unsplash.com/random/1920x1080" alt="Navbar Background" className="navbar-image" />
+        <div className="navbar-text">
+          <h1>Heading</h1>
+          <p>Line 1</p>
+          <p>Line 2</p>
+          
+        </div>
+      </div>
       </div>
     </nav>
   );

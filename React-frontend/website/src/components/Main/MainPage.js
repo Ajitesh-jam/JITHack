@@ -6,10 +6,10 @@ import './MainPage.css';
 const items = Array.from({ length: 10 }, (_, i) => ({
   id: i + 1,
   image: `https://source.unsplash.com/random/800x600?sig=${i}`, // Random stock images
-  property1: `Property 1-${i + 1}`,
-  property2: `Property 2-${i + 1}`,
-  property3: `Property 3-${i + 1}`,
-  property4: `Property 4-${i + 1}`,
+  property1: `Name-${i + 1}`,
+  property2: `SellerName-${i + 1}`,
+  property3: `Price-${i + 1}`,
+  
 }));
 
 const CarouselSection = ({ title }) => (

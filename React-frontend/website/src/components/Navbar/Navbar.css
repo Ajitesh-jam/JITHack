@@ -108,7 +108,7 @@
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #0a131e; /* Darker blue */
+    background-color: #55e61b; /* Darker blue */
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -132,4 +132,33 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+}
+
+.navbar-image-container {
+  position: relative;
+  width: 100%;
+}
+
+.navbar-image {
+  width: 100%;
+  height: auto;
+  opacity: 0.7; /* 70% opacity */
+}
+
+.navbar-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ffffff; /* White */
+}
+
+.navbar-text h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.navbar-text p {
+  margin: 5px 0;
 }
