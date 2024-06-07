@@ -1,19 +1,19 @@
 import React from 'react';
 import './Navbar.css'; // Import the CSS file for styling
-
+import skinImg from "../assets/images/hero-bg.jpg";
 function Navbar() {
   return (
     <nav className="navbar">
+
       <div className="navbar-left">
         <div className="nav-logo">
-          <img src="hero-bg.jpg" alt="Logo" />
-          <span className="nav-name" style={{ fontFamily: 'Montserrat' }}>DropShip</span>
+          <img src={skinImg} alt="Example" />
+
+          <span className="nav-name" style={{ fontFamily: 'Chewy, sans-serif' }}>DropShip</span>
         </div>
         <div className="nav-buttons">
-          <button className="nav-button">Button 1</button>
-          <button className="nav-button">Button 2</button>
-          <button className="nav-button">Button 3</button>
-          <button className="nav-button">Button 4</button>
+          <button className="nav-button">Buy</button>
+
         </div>
       </div>
       <div className="navbar-right">

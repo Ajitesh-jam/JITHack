@@ -1,0 +1,88 @@
+body {
+    background-color: #15192f; /* Dark blue-black */
+    color: #ffffff; /* White */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .main-page {
+    padding: 20px;
+  }
+  
+  .subheading {
+    color: #C0C0C0; /* Silver-grey */
+  background-color: #2f2f2f; /* Faded grey background */
+  padding: 10px;
+  border-radius: 5px;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  margin-bottom: 20px;
+  }
+  
+  .carousel-section {
+    margin-bottom: 40px;
+  }
+  
+  .carousel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #283447; /* Dark blue */
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 10px; /* Adjust spacing between carousel items */
+  }
+  
+  .carousel-item img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .item-details {
+    margin-top: 10px;
+    color: #a0522d; /* Sienna (brown) */
+  }
+  
+  .item-details p {
+    margin: 5px 0;
+  }
+  
+  /* Custom Carousel Styles */
+.custom-carousel .carousel .control-arrow {
+    background: #000000; /* Blackened buttons */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    opacity: 0.8;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .custom-carousel .carousel .control-arrow:hover {
+    background: #fff; /* Change to white on hover */
+    color: #000;
+    opacity: 1;
+  }
+  
+  .custom-carousel .carousel .control-prev {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+  
+  .custom-carousel .carousel .control-next {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+  
+  .custom-carousel .carousel .slide {
+    display: flex;
+    justify-content: center;
+  }
